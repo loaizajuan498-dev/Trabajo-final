@@ -1,13 +1,211 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Q'hubo — Clon (Demo)</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Optional: Google Font similar -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div>
-    
-</div>
+
+  <!-- Header / Topbar -->
+  <header class="bg-white border-bottom">
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between py-2">
+        <div class="d-flex align-items-center gap-3">
+          <img src="https://via.placeholder.com/140x50?text=Q'hubo+Logo" alt="Logo Q'hubo" class="logo-img">
+          <div class="d-none d-md-block text-muted small">El periódico más leído de Colombia</div>
+        </div>
+
+        <div class="text-end d-none d-md-block small text-muted">
+          <div id="todayDate">lunes, 6 de octubre de 2025</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand d-lg-none" href="#">Q'hubo</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
+          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="impresaDropdown" role="button" data-bs-toggle="dropdown">Versión Impresa</a>
+              <ul class="dropdown-menu" aria-labelledby="impresaDropdown">
+                <li><a class="dropdown-item" href="#">Bogotá</a></li>
+                <li><a class="dropdown-item" href="#">Medellín</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Encuéntranos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contáctenos</a></li>
+          </ul>
+
+          <form class="d-flex" role="search">
+            <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+            <button class="btn btn-outline-secondary btn-sm" type="submit">Buscar</button>
+          </form>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main content -->
+  <main class="container my-4">
+    <div class="row g-4">
+      <!-- Left column: Featured / list -->
+      <div class="col-lg-8">
+
+        <!-- Featured top: large card + smaller cards -->
+        <div class="row g-3 mb-3">
+          <div class="col-12">
+            <div class="card featured-card shadow-sm">
+              <div class="row g-0">
+                <div class="col-md-6">
+                  <img src="https://via.placeholder.com/900x500?text=Featured+Image" class="img-fluid rounded-start" alt="featured">
+                </div>
+                <div class="col-md-6">
+                  <div class="card-body">
+                    <h2 class="card-title display-6">¡PÍDELO A DOMICILIO!</h2>
+                    <p class="card-text lead">Cómpralo recién impreso con tu vendedor, droguerías La Rebaja y locales comerciales. O escríbenos al WhatsApp: <strong>300 7076875</strong> y te lo llevamos a domicilio.</p>
+                    <a href="#" class="btn btn-primary btn-sm">Ver más</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Three horizontal small items -->
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+1" class="card-img-top" alt="img1">
+              <div class="card-body">
+                <h5 class="card-title">Lo que colombia opina sobre el paro</h5>
+                <p class="card-text small text-muted">Descargar aquí... <a href="#">[Ver más]</a></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+2" class="card-img-top" alt="img2">
+              <div class="card-body">
+                <h5 class="card-title">Empatamos frente a Venezuela</h5>
+                <p class="card-text small text-muted">Con dos empates la Selección Colombia cerró anoche su doble fecha...</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100">
+              <img src="https://via.placeholder.com/400x250?text=Imagen+3" class="card-img-top" alt="img3">
+              <div class="card-body">
+                <h5 class="card-title">Los bombones que le dan la vuelta al mundo</h5>
+                <p class="card-text small text-muted">Arrancó la nueva temporada de ‘La vuelta al mundo en 80 risas’...</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article list: repeated cards -->
+        <section>
+          <h3 class="h5 mb-3">Últimas noticias</h3>
+
+          <div class="list-group">
+            <!-- Article item -->
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+              <img src="https://via.placeholder.com/160x100?text=Thumb" alt="" class="flex-shrink-0 rounded" width="160">
+              <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                  <h5 class="mb-1">Ya son 18 años del terrible atentado terrorista a las Torres Gemelas</h5>
+                  <p class="mb-1 text-muted small">Hoy se cumplen 18 años en los que el planeta entero fue testigo de un verdadero episodio de terror...</p>
+                </div>
+                <small class="text-muted">Hace 2 h</small>
+              </div>
+            </a>
+
+            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
+              <img src="https://via.placeholder.com/160x100?text=Thumb+2" alt="" class="flex-shrink-0 rounded" width="160">
+              <div class="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                  <h5 class="mb-1">Titular ejemplo de noticia</h5>
+                  <p class="mb-1 text-muted small">Pequeña intro o entradilla de la noticia para enganchar al lector...</p>
+                </div>
+                <small class="text-muted">Hace 5 h</small>
+              </div>
+            </a>
+
+            <!-- Repeat as necessary -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right column: sidebar -->
+      <aside class="col-lg-4">
+        <div class="card mb-3 sticky-top" style="top:1rem;">
+          <div class="card-body">
+            <h6 class="card-title">Dale clic todos los días</h6>
+            <img src="https://via.placeholder.com/320x200?text=Promo" class="img-fluid rounded mb-2" alt="promo">
+            <a href="#" class="btn btn-outline-primary btn-sm w-100">Ver más</a>
+          </div>
+        </div>
+
+        <div class="card mb-3">
+          <div class="card-body">
+            <h6 class="card-title">Conoce nuestra página en Medellín</h6>
+            <img src="https://via.placeholder.com/320x120?text=Medell%C3%ADn" class="img-fluid rounded" alt="medellin">
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-body text-center">
+            <img src="https://via.placeholder.com/140x80?text=Logo+Qhubo" alt="logo" class="mb-2">
+            <p class="small text-muted mb-0">Q’hubo es un periódico tabloide colombiano... <a href="#">Más</a></p>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light py-4 mt-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <h5>Q’hubo</h5>
+          <p class="small">© Derechos Reservados por Copyright. – Teléfono: (571) 7425050</p>
+          <p class="small mb-0">Calle 25 D BIS N° 102 a – 63, Edificio La República, 3er piso. | Bogotá – Colombia.</p>
+        </div>
+        <div class="col-md-4 text-md-end">
+          <p class="small mb-1"><a class="link-light" href="#">Política de Privacidad</a></p>
+          <p class="small mb-0">Diseño y desarrollo: Bogotá Pixelpro</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS (Popper + Bootstrap) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // optional: set today's date (you can remove if you want static)
+    const d = new Date();
+    const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+    document.getElementById('todayDate').innerText = d.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric' }) + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
+  </script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</html>
