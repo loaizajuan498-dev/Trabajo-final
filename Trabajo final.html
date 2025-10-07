@@ -1,211 +1,187 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Q'hubo — Clon (Demo)</title>
-
-  <!-- Bootstrap CSS (CDN) -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Optional: Google Font similar -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL PAÍS: el periódico global</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tiempos+Text:ital,wght@0,400;0,700;1,400&family=Majerit:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Cookies/Subscription banner -->
+    <div class="banner-overlay" id="banner">
+        <div class="banner-content">
+            <h2>EL PAÍS</h2>
+            <p>It offers the following browsing modes</p>
 
-  <!-- Header / Topbar -->
-  <header class="bg-white border-bottom">
-    <div class="container">
-      <div class="d-flex align-items-center justify-content-between py-2">
-        <div class="d-flex align-items-center gap-3">
-          <img src="https://via.placeholder.com/140x50?text=Q'hubo+Logo" alt="Logo Q'hubo" class="logo-img">
-          <div class="d-none d-md-block text-muted small">El periódico más leído de Colombia</div>
-        </div>
+            <div class="banner-options">
+                <div class="option">
+                    <h3>Free browsing by accepting cookies</h3>
+                    <p>This will involve the use of your browsing information for advertising and content personalization purposes.</p>
+                    <button class="btn-primary">ACCEPT AND CONTINUE</button>
+                </div>
 
-        <div class="text-end d-none d-md-block small text-muted">
-          <div id="todayDate">lunes, 6 de octubre de 2025</div>
+                <div class="option">
+                    <h3>Subscribe and decline</h3>
+                    <p>This option will allow you, among other services, unlimited reading of El País on the website and App.</p>
+                    <button class="btn-secondary">SUBSCRIBE AND DECLINE</button>
+                </div>
+            </div>
+
+            <p class="small-text">Already a subscriber? <a href="#">Log in</a></p>
         </div>
-      </div>
     </div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
-      <div class="container">
-        <a class="navbar-brand d-lg-none" href="#">Q'hubo</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"
-          aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="mainNav">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="impresaDropdown" role="button" data-bs-toggle="dropdown">Versión Impresa</a>
-              <ul class="dropdown-menu" aria-labelledby="impresaDropdown">
-                <li><a class="dropdown-item" href="#">Bogotá</a></li>
-                <li><a class="dropdown-item" href="#">Medellín</a></li>
-              </ul>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Encuéntranos</a></li>
-            <li class="nav-item"><a class="nav-link" href="#">Contáctenos</a></li>
-          </ul>
-
-          <form class="d-flex" role="search">
-            <input class="form-control form-control-sm me-2" type="search" placeholder="Buscar" aria-label="Buscar">
-            <button class="btn btn-outline-secondary btn-sm" type="submit">Buscar</button>
-          </form>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Main content -->
-  <main class="container my-4">
-    <div class="row g-4">
-      <!-- Left column: Featured / list -->
-      <div class="col-lg-8">
-
-        <!-- Featured top: large card + smaller cards -->
-        <div class="row g-3 mb-3">
-          <div class="col-12">
-            <div class="card featured-card shadow-sm">
-              <div class="row g-0">
-                <div class="col-md-6">
-                  <img src="https://via.placeholder.com/900x500?text=Featured+Image" class="img-fluid rounded-start" alt="featured">
-                </div>
-                <div class="col-md-6">
-                  <div class="card-body">
-                    <h2 class="card-title display-6">¡PÍDELO A DOMICILIO!</h2>
-                    <p class="card-text lead">Cómpralo recién impreso con tu vendedor, droguerías La Rebaja y locales comerciales. O escríbenos al WhatsApp: <strong>300 7076875</strong> y te lo llevamos a domicilio.</p>
-                    <a href="#" class="btn btn-primary btn-sm">Ver más</a>
-                  </div>
-                </div>
-              </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <span class="date">07 oct 2025 | Actualizado 17:49 CEST</span>
+            <div class="header-buttons">
+                <button class="btn-subscribe">SUSCRÍBETE</button>
+                <button class="btn-login">INICIAR SESIÓN</button>
             </div>
-          </div>
-
-          <!-- Three horizontal small items -->
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="https://via.placeholder.com/400x250?text=Imagen+1" class="card-img-top" alt="img1">
-              <div class="card-body">
-                <h5 class="card-title">Lo que colombia opina sobre el paro</h5>
-                <p class="card-text small text-muted">Descargar aquí... <a href="#">[Ver más]</a></p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="https://via.placeholder.com/400x250?text=Imagen+2" class="card-img-top" alt="img2">
-              <div class="card-body">
-                <h5 class="card-title">Empatamos frente a Venezuela</h5>
-                <p class="card-text small text-muted">Con dos empates la Selección Colombia cerró anoche su doble fecha...</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4">
-            <div class="card h-100">
-              <img src="https://via.placeholder.com/400x250?text=Imagen+3" class="card-img-top" alt="img3">
-              <div class="card-body">
-                <h5 class="card-title">Los bombones que le dan la vuelta al mundo</h5>
-                <p class="card-text small text-muted">Arrancó la nueva temporada de ‘La vuelta al mundo en 80 risas’...</p>
-              </div>
-            </div>
-          </div>
         </div>
 
-        <!-- Article list: repeated cards -->
-        <section>
-          <h3 class="h5 mb-3">Últimas noticias</h3>
+        <div class="main-header">
+            <div class="logo">
+                <h1>EL PAÍS</h1>
+                <span class="tagline">EL PERIÓDICO GLOBAL</span>
+            </div>
+        </div>
 
-          <div class="list-group">
-            <!-- Article item -->
-            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
-              <img src="https://via.placeholder.com/160x100?text=Thumb" alt="" class="flex-shrink-0 rounded" width="160">
-              <div class="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                  <h5 class="mb-1">Ya son 18 años del terrible atentado terrorista a las Torres Gemelas</h5>
-                  <p class="mb-1 text-muted small">Hoy se cumplen 18 años en los que el planeta entero fue testigo de un verdadero episodio de terror...</p>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#">Internacional</a></li>
+                <li><a href="#">Opinión</a></li>
+                <li><a href="#">España</a></li>
+                <li><a href="#">Economía</a></li>
+                <li><a href="#">Sociedad</a></li>
+                <li><a href="#">Medio Ambiente</a></li>
+                <li><a href="#">Ciencia</a></li>
+                <li><a href="#">Salud</a></li>
+                <li><a href="#">Tecnología</a></li>
+                <li><a href="#">Cultura</a></li>
+                <li><a href="#">Deportes</a></li>
+                <li><a href="#">Babelia</a></li>
+                <li><a href="#">El País Semanal</a></li>
+                <li><a href="#">Cinco Días</a></li>
+                <li><a href="#">El País Exprés</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Main news grid -->
+            <section class="news-grid">
+                <!-- Featured article -->
+                <article class="featured-article">
+                    <h2><a href="#">El Gobierno aprueba el uso del cannabis medicinal con receta y en hospitales</a></h2>
+                    <p class="author">Pablo Linde | Madrid</p>
+                    <p class="excerpt">El decreto no concreta las dolencias que podrán ser tratadas, que se irán ajustando a la evidencia científica</p>
+                </article>
+
+                <!-- Second featured -->
+                <article class="secondary-article">
+                    <h2><a href="#">El Ejecutivo pone freno a la creación de "universidades chiringuito"</a></h2>
+                    <p class="author">Elisa Silió | Madrid</p>
+                    <p class="excerpt">Los nuevos centros tendrán que presentar informes de calidad y tener un mínimo de 4.500 alumnos. El sistema de igualdad de oportunidades se está gripando en España</p>
+                </article>
+
+                <!-- Breaking news -->
+                <article class="breaking-news">
+                    <h2><a href="#">Al menos tres heridos y cuatro personas desaparecidas en el derrumbe de un edificio en obras en Madrid: "Noté un gran temblor"</a></h2>
+                    <p class="author">Patricia Ortega Dolz / Álvaro Sánchez-Martín | Madrid</p>
+                    <p class="excerpt">Los servicios de emergencias trabajan en la calle Hileras, cercana a la Puerta del Sol y el Teatro Real, tras la caída parcial de unos forjados de un inmueble</p>
+                    <img src="https://ext.same-assets.com/3034991607/436915353.jpeg" alt="Derrumbe edificio Madrid">
+                </article>
+
+                <!-- International news -->
+                <article class="international-article">
+                    <h2><a href="#">Aumenta la presión sobre Macron para que dimita como salida a la crisis de Francia</a></h2>
+                    <p class="author">Daniel Verdú | París</p>
+                </article>
+
+                <article class="international-article">
+                    <h2><a href="#">Trump se abre a invocar la Ley de Insurrección para enviar tropas a ciudades demócratas</a></h2>
+                    <p class="author">Macarena Vidal Liy | Washington</p>
+                    <p class="excerpt">La Casa Blanca asegura que apelará la prohibición judicial de desplegar a la Guardia Nacional en Portland</p>
+                </article>
+            </section>
+
+            <!-- Gaza section -->
+            <section class="gaza-section">
+                <h2 class="section-title">Guerra en Gaza</h2>
+                <div class="gaza-articles">
+                    <article class="gaza-article">
+                        <img src="https://ext.same-assets.com/3034991607/390590492.jpeg" alt="Gaza conflict">
+                        <h3><a href="#">Programa especial | Borrell analiza el futuro de Gaza y el papel de Europa en la región</a></h3>
+                        <p class="author">Álvaro Sánchez-Martín / Lorraine Delorenzo | Madrid / Barcelona</p>
+                    </article>
+
+                    <article class="gaza-article">
+                        <img src="https://ext.same-assets.com/3034991607/3044510719.jpeg" alt="Spanish detainees">
+                        <h3><a href="#">El segundo grupo de detenidos españoles por Israel: "Nos han torturado con técnicas sibilinas"</a></h3>
+                    </article>
+
+                    <article class="gaza-article">
+                        <img src="https://ext.same-assets.com/3034991607/2424918447.jpeg" alt="Reyes Rigo">
+                        <h3><a href="#">Reyes Rigo, acusada de morder a una funcionaria israelí, es la única española de la flotilla que sigue detenida</a></h3>
+                        <p class="author">Trinidad Deiros Bronte | Jerusalén</p>
+                    </article>
+
+                    <article class="gaza-article">
+                        <h3><a href="#">La flotilla, o cualquier excusa es buena para denigrar a las mujeres</a></h3>
+                        <p class="author">Rebeca Carranco</p>
+                    </article>
                 </div>
-                <small class="text-muted">Hace 2 h</small>
-              </div>
-            </a>
+            </section>
 
-            <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3">
-              <img src="https://via.placeholder.com/160x100?text=Thumb+2" alt="" class="flex-shrink-0 rounded" width="160">
-              <div class="d-flex gap-2 w-100 justify-content-between">
-                <div>
-                  <h5 class="mb-1">Titular ejemplo de noticia</h5>
-                  <p class="mb-1 text-muted small">Pequeña intro o entradilla de la noticia para enganchar al lector...</p>
+            <!-- Weather alert -->
+            <section class="weather-alert">
+                <img src="https://ext.same-assets.com/3034991607/2077794867.jpeg" alt="Weather alert">
+                <div class="weather-content">
+                    <h2><a href="#">La Aemet lanza un aviso por la dana 'Alice', que puede traer lluvias muy fuertes a partir del miércoles</a></h2>
+                    <p>Se esperan precipitaciones intensas en el Este de la Península y Baleares</p>
                 </div>
-                <small class="text-muted">Hace 5 h</small>
-              </div>
-            </a>
+            </section>
 
-            <!-- Repeat as necessary -->
-          </div>
-        </section>
+            <!-- Actualidad section -->
+            <section class="actualidad-section">
+                <div class="section-header">
+                    <h2>Actualidad</h2>
+                    <button class="newsletter-btn">NEWSLETTER DIARIA</button>
+                </div>
 
-      </div>
+                <div class="actualidad-grid">
+                    <article class="actualidad-main">
+                        <img src="https://ext.same-assets.com/3034991607/413369005.jpeg" alt="Mónica García">
+                        <h3><a href="#">Mónica García advierte a Ayuso sobre el aborto: "La ley se cumple"</a></h3>
+                        <p class="author">Pablo Linde | Madrid</p>
+                        <p class="excerpt">La ministra de Sanidad señala a Madrid y Andalucía, las comunidades con más abortos en la privada</p>
+                    </article>
 
-      <!-- Right column: sidebar -->
-      <aside class="col-lg-4">
-        <div class="card mb-3 sticky-top" style="top:1rem;">
-          <div class="card-body">
-            <h6 class="card-title">Dale clic todos los días</h6>
-            <img src="https://via.placeholder.com/320x200?text=Promo" class="img-fluid rounded mb-2" alt="promo">
-            <a href="#" class="btn btn-outline-primary btn-sm w-100">Ver más</a>
-          </div>
+                    <div class="actualidad-side">
+                        <article>
+                            <h3><a href="#">Bruselas quiere doblar los aranceles al acero para protegerse de las exportaciones de China</a></h3>
+                            <p class="author">Manuel V. Gómez | Bruselas</p>
+                            <p class="excerpt">La Comisión Europea pide elevar hasta el 50% las tarifas y recortar las cuotas de importación libre para defender un sector crítico</p>
+                        </article>
+
+                        <article>
+                            <h3><a href="#">El Congreso pospone a este miércoles la votación del decreto del embargo de armas a Israel</a></h3>
+                            <p class="author">Paula Chouza / Laura Llach | Madrid</p>
+                            <p class="excerpt">La decisión se toma para que no coincida con el aniversario de los atentados de Hamás, pero el debate se mantiene esta tarde</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div class="card mb-3">
-          <div class="card-body">
-            <h6 class="card-title">Conoce nuestra página en Medellín</h6>
-            <img src="https://via.placeholder.com/320x120?text=Medell%C3%ADn" class="img-fluid rounded" alt="medellin">
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-body text-center">
-            <img src="https://via.placeholder.com/140x80?text=Logo+Qhubo" alt="logo" class="mb-2">
-            <p class="small text-muted mb-0">Q’hubo es un periódico tabloide colombiano... <a href="#">Más</a></p>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <!-- Footer -->
-  <footer class="bg-dark text-light py-4 mt-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-8">
-          <h5>Q’hubo</h5>
-          <p class="small">© Derechos Reservados por Copyright. – Teléfono: (571) 7425050</p>
-          <p class="small mb-0">Calle 25 D BIS N° 102 a – 63, Edificio La República, 3er piso. | Bogotá – Colombia.</p>
-        </div>
-        <div class="col-md-4 text-md-end">
-          <p class="small mb-1"><a class="link-light" href="#">Política de Privacidad</a></p>
-          <p class="small mb-0">Diseño y desarrollo: Bogotá Pixelpro</p>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS (Popper + Bootstrap) -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // optional: set today's date (you can remove if you want static)
-    const d = new Date();
-    const months = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
-    document.getElementById('todayDate').innerText = d.toLocaleDateString('es-CO', { weekday: 'long', day: 'numeric' }) + ' de ' + months[d.getMonth()] + ' de ' + d.getFullYear();
-  </script>
+    <script src="src/main.ts"></script>
 </body>
 </html>
